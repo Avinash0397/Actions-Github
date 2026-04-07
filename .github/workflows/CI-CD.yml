@@ -75,7 +75,7 @@ jobs:
         path: target/*.jar 
         
     -name: Main Workflow
-      runs-on: ubuntu-latest
+     runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v4
         with:
