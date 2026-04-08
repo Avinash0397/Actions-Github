@@ -120,13 +120,5 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-south-1
-    - name: SSH into EC2 and deploy Docker container
-      run: |
-        ssh -o StrictHostKeyChecking=no -i /path/to/your/key.pem ec2-user@your-ec2-public-ip << 'EOF'
-          docker pull avinash031997/avinash031997:tagname
-          docker stop myapp || true
-          docker rm myapp || true
-          docker run -d --name myapp -p 8080:8080 avinash031997/avinash031997:tagname
-        EOF       
-      
+        aws-region: us-east-1
+
