@@ -126,10 +126,10 @@ jobs:
     - name: Setup SSH for EC2
       uses: appleboy/ssh-action@v1.0.0
       with:
+        EC2_HOST: 52.70.80.236
         EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-        EC2_URL: ${{ secrets.EC2_URL }}
+        EC2_USER: ubuntu
 
     - name: Create a new file on EC2
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_URL }} \
-        'echo "hello-world" >> new_file.txt'
+        echo "hello-world" >> new_file.txt'
